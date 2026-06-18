@@ -1,0 +1,108 @@
+/* Botão Flutuante */
+#copa-floating-btn {
+  position: fixed;
+  bottom: 60px;
+  right: 25px;
+  width: 46px;
+  height: 46px;
+  background: linear-gradient(135deg, #009c3b, #ffdf00);
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  z-index: 999999;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  transition: transform 0.2s ease;
+  user-select: none;
+}
+#copa-floating-btn:hover { transform: scale(1.1); }
+
+/* Modal Janela Principal */
+#copa-modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 999998;
+  justify-content: center; align-items: center;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+.copa-modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 460px;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  position: relative;
+}
+.copa-close-btn { position: absolute; top: 12px; right: 18px; font-size: 24px; cursor: pointer; color: #999; z-index: 10; }
+.copa-close-btn:hover { color: #333; }
+
+/* Cabeçalho de Jogos (AJUSTADO: Centralizado e longe do X) */
+.copa-navegacao-header { 
+  display: flex; 
+  justify-content: center; /* Mudou de space-between para center */
+  align-items: center; 
+  gap: 15px;               /* Espaçamento perfeito e controlado entre setas e data */
+  border-bottom: 2px solid #009c3b; 
+  padding-bottom: 10px; 
+}
+
+.copa-navegacao-header h2 { 
+  margin: 0; 
+  color: #222; 
+  font-size: 18px; 
+  font-weight: 700; 
+  text-transform: capitalize; 
+  min-width: 140px;        /* Garante que o texto tenha espaço fixo e as setas não se mexam */
+  text-align: center;
+}
+
+.copa-seta { 
+  cursor: pointer; 
+  font-size: 16px; 
+  color: #009c3b; 
+  padding: 4px 10px; 
+  user-select: none; 
+  transition: transform 0.2s;
+}
+.copa-seta:hover { transform: scale(1.2); }
+
+/* Cards de Confronto */
+.copa-game-card { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #f5f5f5; font-size: 13px; }
+.copa-team { color: #333; width: 38%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.copa-team.right { text-align: right; }
+.copa-info { width: 24%; text-align: center; }
+
+/* Seção dos Grupos e Tabela */
+.copa-secao-grupos { margin-top: 25px; border-top: 1px dashed #ddd; padding-top: 15px; }
+.copa-secao-grupos h3 { margin: 0 0 12px 0; font-size: 14px; color: #111; font-weight: bold; }
+
+/* Grid dos Botões de Letras A-L */
+.copa-grid-letras { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; margin-bottom: 15px; }
+.copa-btn-letra {
+  background: #f0f2f5; border: none; padding: 6px 0; font-size: 12px; font-weight: bold;
+  color: #555; border-radius: 6px; cursor: pointer; transition: all 0.2s;
+}
+.copa-btn-letra:hover { background: #e4e6e9; }
+.copa-btn-letra.ativo { background: #009c3b; color: #fff; }
+
+/* Layout da Tabela de Classificação */
+.copa-wrapper-tabela h4 { margin: 5px 0 10px 0; font-size: 15px; color: #222; font-weight: bold; }
+.copa-tabela-classificacao { width: 100%; border-collapse: collapse; font-size: 13px; color: #444; }
+.copa-tabela-classificacao th { padding: 8px 4px; font-weight: 600; color: #777; border-bottom: 1px solid #eee; font-size: 11px; }
+.copa-tabela-classificacao td { padding: 10px 4px; border-bottom: 1px solid #f0f0f0; }
+
+.copa-tabela-classificacao tr.copa-linha-zona td:first-child {
+  position: relative;
+  font-weight: bold;
+  color: #111 !important;
+}
+.copa-tabela-classificacao tr.copa-linha-zona {
+  box-shadow: inset 3px 0 0 0 #2f80ed; 
+}
